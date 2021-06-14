@@ -46,6 +46,8 @@ body {
 	overflow: hidden;
 	height: 446px;
 	width: 1080px;
+	grid-auto-rows: 1fr;
+	grid-auto-columns: 1fr;
 
 	.card-text {
 		grid-area: text-card;
@@ -65,6 +67,7 @@ body {
 	img,
 	srcset {
 		width: 100%;
+		height: 100%;
 	}
 
 	.stats {
@@ -100,6 +103,7 @@ h2 p {
 		height: auto;
 		text-align: center;
 		margin: 5rem 0;
+		grid-auto-rows: auto;
 
 		.card-text {
 			padding: 3rem 1.5rem;
@@ -107,6 +111,13 @@ h2 p {
 		.stats {
 			flex-direction: column;
 			gap: 2rem;
+		}
+
+		picture,
+		img,
+		srcset {
+			width: 100%;
+			height: auto;
 		}
 	}
 }
