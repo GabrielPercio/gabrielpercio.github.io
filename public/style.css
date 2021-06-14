@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  font-size: 15px;
+  background-color: #090b1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.card {
+  display: grid;
+  grid-template-areas: "text-card image-card";
+  background-color: #1b1938;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 446px;
+  width: 1080px;
+}
+.card .card-text {
+  grid-area: text-card;
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+.card .card-text p {
+  height: 100%;
+  font-family: "Inter", sans-serif;
+}
+.card picture,
+.card img,
+.card srcset {
+  width: 100%;
+}
+.card .stats {
+  grid-area: image-card;
+  display: flex;
+  justify-content: space-between;
+}
+
+h1,
+h2 {
+  color: white;
+}
+h1 span,
+h2 span {
+  color: #aa5cdb;
+}
+
+p {
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+}
+
+h2 p {
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "Lexend Deca", sans-serif;
+}
+
+@media (max-width: 375px) {
+  .card {
+    grid-template-areas: "image-card" "text-card";
+    width: 327px;
+    height: auto;
+    text-align: center;
+    margin: 5rem 0;
+  }
+  .card .card-text {
+    padding: 3rem 1.5rem;
+  }
+  .card .stats {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}

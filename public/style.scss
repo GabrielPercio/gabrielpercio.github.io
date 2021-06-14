@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+
+$fontinter: "Inter", sans-serif;
+$fontlexend: "Lexend Deca", sans-serif;
+
+$mobileWidth: 375px;
+$desktopWidth: 1440px;
+
+// Cores primárias
+
+$primary-bk: hsl(233, 47%, 7%);
+$primary-card-bk: hsl(244, 38%, 16%);
+$primary-accent: hsl(277, 64%, 61%);
+
+// Cores secundárias
+$secondary-bk: hsl(0, 0%, 100%);
+$secondary-main-p: hsla(0, 0%, 100%, 0.75);
+$secondary-stat: hsla(0, 0%, 100%, 0.6);
+
+// Estilo
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: $fontinter;
+}
+
+body {
+	font-size: 15px;
+	background-color: $primary-bk;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+}
+
+.card {
+	display: grid;
+	grid-template-areas: "text-card image-card";
+	background-color: $primary-card-bk;
+	border-radius: 5px;
+	overflow: hidden;
+	height: 446px;
+	width: 1080px;
+
+	.card-text {
+		grid-area: text-card;
+		padding: 5rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		justify-content: space-between;
+
+		p {
+			height: 100%;
+			font-family: $fontinter;
+		}
+	}
+
+	picture,
+	img,
+	srcset {
+		width: 100%;
+	}
+
+	.stats {
+		grid-area: image-card;
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+h1,
+h2 {
+	color: $secondary-bk;
+	span {
+		color: $primary-accent;
+	}
+}
+
+p {
+	color: $secondary-main-p;
+	font-weight: 400;
+	font-family: $fontinter;
+}
+
+h2 p {
+	color: $secondary-stat;
+	font-family: $fontlexend;
+}
+
+@media (max-width: 375px) {
+	.card {
+		grid-template-areas: "image-card" "text-card";
+		width: 327px;
+		height: auto;
+		text-align: center;
+		margin: 5rem 0;
+
+		.card-text {
+			padding: 3rem 1.5rem;
+		}
+		.stats {
+			flex-direction: column;
+			gap: 2rem;
+		}
+	}
+}
